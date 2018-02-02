@@ -1,0 +1,45 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__hd">
+    <view class="page__title">城际快车出行</view>
+    <view class="page__desc">各班次车辆列表，预定请点击相应车次</view>
+  </view>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">今日车次</view>
+    <view class="weui-panel__bd">
+      <navigator wx:for="{{buses}}" wx:key="id" url="./book?id={{item.id}}&startLoc={{item.startLoc}}&endLoc={{item.endLoc}}&startTime={{item.startTime}}&price={{item.price}}&tickes={{item.tickes}}&carid={{item.carid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="../../image/byd-tang.jpg" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{item.startLoc}} --------> {{item.endLoc}}</view>
+          <view class="weui-media-box__desc">
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="placeholder"> 发车时间：{{item.startTime}}</view>
+              </view>
+            </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="placeholder">票价：￥{{item.price}}元</view>
+              </view>
+            </view>
+            <view class="weui-flex">
+              <view class="weui-flex__item">
+                <view class="placeholder">余票：{{item.tickes}}张</view>
+              </view>
+              <view class="weui-flex__item">
+                <view class="placeholder">点击预定</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd">明日车次</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </view>
+</view>

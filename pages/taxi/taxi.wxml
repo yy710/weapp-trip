@@ -1,0 +1,50 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__hd">
+    <view class="page__title">普洱市区网约车</view>
+    <view class="page__desc">请点击选择</view>
+  </view>
+  <form report-submit="true" bindsubmit="order">
+    <view class="page__bd">
+      <view class="weui-cells__title">请确认以下信息真实有效</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">出发位置</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" id="startLoc" name="start" catchfocus="setLocation" placeholder="请点击获取位置" value="{{startloc.label}}" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">到达位置</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" id="endLoc" name="destination" catchfocus="setLocation" placeholder="请点击获取位置" value="{{destloc.label}}" />
+          </view>
+        </view>
+      </view>
+      <block wx:if="{{showNav}}">
+        <view class="weui-cells__title">从{{nav.start}}出发到达{{nav.destination}}，距离{{nav.distance}}公里。预计本次出行费用为{{nav.prices||0}}元，需{{nav.duration}}可安全到达。</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__bd">
+              <input class="weui-input" id="inputPhone" name="phone" type="number" bindinput='getPhone' placeholder="请输入手机号" value="{{phone}}" />
+            </view>
+            <view class="weui-cell__ft">
+              <view class="weui-vcode-btn" hidden='{{hiddenGetVerifyCode}}' bindtap='getVerifyCode' >{{vCodeText}}</view>
+            </view>
+          </view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="verifyCode" value="{{vCode}}" bindinput='inputVerifyCode' hidden='{{hiddenVerifyCodeInput}}' placeholder="请输入验证码" />
+            </view>
+          </view>
+        </view>
+        <view>
+          <button type="primary" form-type="submit" class="weui-btn" disabled='{{disabledSubmit}}'>现在出发</button>
+        </view>
+      </block>
+    </view>
+  </form>
+</view>

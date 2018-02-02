@@ -1,0 +1,53 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__hd">
+    <view class="page__title">预定{{bus.startLoc}}到{{bus.endLoc}}车票</view>
+    <view class="page__desc">发车时间：{{bus.startTime}}，现还剩余{{bus.tickes}}张票，订票后请提前5分钟上车，若由乘客产生延误需自行负责</view>
+  </view>
+   <form report-submit="true" bindsubmit="book">
+  <view class="page_bd">
+    <view class="weui-cells__title">请确认以下信息真实有效</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="name" placeholder="请输入姓名" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="phone" placeholder="请输入手机号" />
+        </view>
+        <view class="weui-cell__ft" wx:if="{{true}}">
+          <view class="weui-vcode-btn">获取验证码</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">验证码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="verifyCode" placeholder="请输入验证码" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">乘坐人数</view>
+        </view>
+        <view class="weui-cell__bd">
+          <slider name="amount" bindchange="amountChanged" show-value value="1" min="1" max="{{bus.tickes}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cells__title" style="color:red">订票总价：￥{{prices}}元</view>
+    <view class="weui-cells weui-cells_after-title"></view>
+  </view>
+  <view class="page__bd">
+    <button class="weui-btn" type="primary" form-type="submit">预定行程</button>
+  </view>
+  </form>
+</view>
