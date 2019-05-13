@@ -1,7 +1,7 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
   <view class="page__hd">
     <view class="page__title">能住预约找房</view>
-    <view class="page__desc">请点击选择</view>
+    <view class="page__desc">暂时只支持搜索昆华医院附近房源</view>
   </view>
   <form report-submit="true" bindsubmit="order">
     <view class="page__bd">
@@ -10,13 +10,13 @@
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <!-- <view class="weui-label">入住日期</view> -->
-             <picker class="weui-btn" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <picker class="weui-btn" mode="date" value="{{date}}" bindchange="bindDateChange">
               <button type="default">入住日期</button>
             </picker>
           </view>
           <view class="weui-cell__bd">
-            <picker class="weui-btn" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-                <button type="default">入住时间</button>
+            <picker class="weui-btn" mode="time" value="{{time}}" bindchange="bindTimeChange">
+              <button type="default">入住时间</button>
             </picker>
             <!-- <input class="weui-input" id="startLoc" name="start" catchfocus="setLocation" placeholder="请点击获取位置" value="{{startloc.label}}" /> -->
           </view>
@@ -24,21 +24,21 @@
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <!-- <view class="weui-label">退房日期</view> -->
-             <picker class="weui-btn" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <picker class="weui-btn" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
               <button type="default">退房日期</button>
             </picker>
           </view>
           <view class="weui-cell__bd">
-             <picker class="weui-btn" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
-                <button type="default">退房时间</button>
+            <picker class="weui-btn" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+              <button type="default">退房时间</button>
             </picker>
             <!-- <input class="weui-input" id="endLoc" name="destination" catchfocus="setLocation" placeholder="请点击获取位置" value="{{destloc.label}}" /> -->
           </view>
         </view>
       </view>
       <block wx:if="{{showNav}}">
-      <view class="weui-cells__title">你的需求已发送，正在努力为你寻找房源，请稍等片刻。。。</view>
-       <!--> <view class="weui-cells__title">从{{nav.start}}出发到达{{nav.destination}}，距离{{nav.distance}}公里。预计本次出行费用为{{nav.prices||0}}元，需{{nav.duration}}可安全到达。</view> -->
+        <view class="weui-cells__title">你的需求已发送，正在努力为你寻找房源，请稍等片刻。。。</view>
+        <!-- <view class="weui-cells__title">从{{nav.start}}出发到达{{nav.destination}}，距离{{nav.distance}}公里。预计本次出行费用为{{nav.prices||0}}元，需{{nav.duration}}可安全到达。</view> -->
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input weui-cell_vcode">
             <view class="weui-cell__bd">
@@ -55,7 +55,7 @@
           </view>
         </view>
         <view>
-          <button type="primary" form-type="submit" class="weui-btn" disabled='{{disabledSubmit}}'>现在出发</button>
+          <button type="primary" form-type="submit" class="weui-btn" disabled='{{disabledSubmit}}'>我要找房</button>
         </view>
       </block>
     </view>
