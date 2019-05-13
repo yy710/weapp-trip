@@ -7,7 +7,7 @@
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "兴盛迅捷出行",
+    "navigationBarTitleText": "健康能住",
     "navigationBarBackgroundColor": "#f8f8f8",
     "backgroundColor": "#f8f8f8"
   },
@@ -27,19 +27,19 @@
         "pagePath": "pages/taxi/taxi",
         "iconPath": "image/icon_normal.png",
         "selectedIconPath": "image/icon_pressed.png",
-        "text": "市区网约车"
+        "text": "能住找房"
       },
       {
         "pagePath": "pages/bus/bus",
         "iconPath": "image/icon_normal.png",
         "selectedIconPath": "image/icon_pressed.png",
-        "text": "城际快车"
+        "text": "能住租赁"
       },
       {
         "pagePath": "pages/my/my",
         "iconPath": "image/icon_normal.png",
         "selectedIconPath": "image/icon_pressed.png",
-        "text": "我的出行"
+        "text": "我的订单"
       }
     ]
   },

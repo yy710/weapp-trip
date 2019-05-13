@@ -83,7 +83,7 @@ Page({
 
   onLoad: function (options) {
     // 生命周期函数--监听页面加载
-    phones = [18669077710, 13708438123];//load 已验证电话
+    //phones = [18669077710, 13708438123];//load 已验证电话
     if (phones !== []) {
       this.setData({ phone: phones[0], "disabledSubmit": false });
     }
